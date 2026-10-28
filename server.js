@@ -13,6 +13,9 @@ const MODEL = process.env.FAL_MODEL || 'google/gemini-2.5-flash';
 app.disable('x-powered-by');
 app.use(express.json({ limit: '32kb' }));
 app.use(express.static(path.join(__dirname, 'public'), { extensions: ['html'] }));
+app.get('/', (_req, res) => res.sendFile(path.join(__dirname, 'index.html')));
+app.get('/app.js', (_req, res) => res.sendFile(path.join(__dirname, 'app.js')));
+app.get('/style.css', (_req, res) => res.sendFile(path.join(__dirname, 'style.css')));
 
 // Lightweight per-process rate limit. For a public launch, use a durable shared limiter,
 // user authentication, and provider-side spending limits as well.
