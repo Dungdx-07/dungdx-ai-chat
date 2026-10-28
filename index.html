@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#10131b">
+  <meta name="description" content="Dũng AI Chat — trợ lý trò chuyện AI của riêng bạn.">
+  <title>Dũng AI Chat</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand"><div class="brand-mark">D<span>✦</span></div><div><strong>Dũng AI</strong><small>TRỢ LÝ CỦA BẠN</small></div></div>
+      <button class="new-chat" id="newChat"><span>＋</span> Cuộc trò chuyện mới</button>
+      <div class="side-label">GỢI Ý BẮT ĐẦU</div>
+      <button class="suggestion" data-prompt="Giải thích trí tuệ nhân tạo bằng ví dụ dễ hiểu."><span>✧</span> AI là gì?</button>
+      <button class="suggestion" data-prompt="Dạy tôi một bài C++ cơ bản, có ví dụ và bài tập."><span>⌘</span> Học lập trình</button>
+      <button class="suggestion" data-prompt="Lập kế hoạch học tập 7 ngày cho người mới bắt đầu."><span>◷</span> Lập kế hoạch</button>
+      <div class="sidebar-bottom"><div class="status-dot"></div><span>AI qua fal.ai</span><span class="status-label">BETA</span></div>
+    </aside>
+    <main class="main-panel">
+      <header class="topbar">
+        <button class="icon-btn mobile-menu" id="menuToggle" aria-label="Mở menu">☰</button>
+        <div class="top-title"><span class="online-dot"></span><span>Dũng AI</span><span class="model-tag">CHAT</span></div>
+        <button class="icon-btn" id="clearChat" title="Xóa hội thoại hiện tại" aria-label="Xóa hội thoại">⌫</button>
+      </header>
+      <section class="chat-area" id="chatArea" aria-live="polite">
+        <div class="welcome" id="welcome">
+          <div class="welcome-orb"><span>✦</span></div>
+          <p class="eyebrow">KHÔNG GIAN AI CỦA RIÊNG BẠN</p>
+          <h1>Chào bạn, <em>mình có thể giúp gì?</em></h1>
+          <p class="welcome-sub">Hỏi bất cứ điều gì bạn đang tò mò. Chúng ta bắt đầu từ đây.</p>
+          <div class="prompt-grid">
+            <button class="prompt-card" data-prompt="Giải thích trí tuệ nhân tạo bằng ví dụ dễ hiểu."><span class="card-icon violet">✧</span><strong>Khám phá kiến thức</strong><small>Giải thích chủ đề khó theo cách đơn giản</small><span class="card-arrow">↗</span></button>
+            <button class="prompt-card" data-prompt="Dạy tôi một bài C++ cơ bản, có ví dụ và bài tập."><span class="card-icon blue">⌘</span><strong>Học lập trình</strong><small>Code, tìm lỗi và học từng bước</small><span class="card-arrow">↗</span></button>
+            <button class="prompt-card" data-prompt="Gợi ý 5 ý tưởng dự án nhỏ cho người mới học lập trình."><span class="card-icon mint">◇</span><strong>Sáng tạo ý tưởng</strong><small>Biến ý tưởng thành kế hoạch thực tế</small><span class="card-arrow">↗</span></button>
+            <button class="prompt-card" data-prompt="Giúp tôi lập kế hoạch học tập 7 ngày, mỗi ngày 30 phút."><span class="card-icon amber">◷</span><strong>Lên kế hoạch</strong><small>Chia mục tiêu thành việc nhỏ dễ làm</small><span class="card-arrow">↗</span></button>
+          </div>
+        </div>
+        <div class="messages" id="messages"></div>
+      </section>
+      <footer class="composer-wrap">
+        <form class="composer" id="chatForm">
+          <textarea id="messageInput" rows="1" maxlength="6000" placeholder="Nhắn tin cho Dũng AI..." aria-label="Tin nhắn của bạn"></textarea>
+          <div class="composer-tools"><span class="hint"><span class="kbd">↵</span> gửi <span class="hint-sep">·</span> <span class="kbd">Shift + ↵</span> xuống dòng</span><button class="send-btn" id="sendBtn" type="submit" aria-label="Gửi tin nhắn"><span>↑</span></button></div>
+        </form>
+        <p class="disclaimer">AI có thể mắc lỗi. Hãy kiểm tra lại thông tin quan trọng.</p>
+      </footer>
+    </main>
+  </div>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="/app.js" defer></script>
+</body>
+</html>
